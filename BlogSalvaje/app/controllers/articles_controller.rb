@@ -22,6 +22,9 @@ class ArticlesController < ApplicationController
             render :new
         end
     end
+    def edit
+        @article = Article.find(params[:id])
+    end
     def destroy
         @article = Article.find(params[:id])
         @article.destroy
