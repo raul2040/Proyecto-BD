@@ -1,10 +1,11 @@
-<h1>¡¡Bienvenidos a nuestro blog!!</h1>
-    <%=[1,2,3,4].each do |number| %> 
-        <p>Número <%=number * 2%> </p>
-    <% hola = "Hola mundo, este número de veces"%>
-    <%= "Dime --> #{hola} "%>
-    <% end %>
-
+<h1>¡¡Bienvenidos al blog más salvaje!!</h1>
+    <% @article.each do |article| %>
+    <h1><%= link_to article.title, article %></h1>
+    <div>
+    <%= article.body %>
+    <%= link_to "Eliminar", article, method: :delete, class:"red" %>
+    </div>
+    <%end%>
 <%# testeando ruby %>
 
     
