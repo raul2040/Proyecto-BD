@@ -1,47 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog de BD</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+  <title>ESPACIO SALVAJE</title>
+  <link href="https://fonts.googleapis.com/stylesheets?family=Roboto" rel="stylesheet"> 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!-- Bootstrap core stylesheets -->
+  <link href="vendor/bootstrap/stylesheets/bootstrap.min.stylesheets" rel="stylesheet">
+    <!-- Latest compiled and minified stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/stylesheets/bootstrap.min.stylesheets">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="../JS/functions.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <header>
-    <nav class="be-red white large-padding"> 
-      <ul class="no-list row center-xs middle-xs">  
-      <h1 class="no-margin" id="logo"> Reportaje Salvaje </h1>
-        <li class="col-md">
-          <%= link_to "Inicio", root_path %>
-        </li>
-        <li class="col-md">
-          <%= link_to "Articulos", articles_path %>
-        </li>
-        <li class="col-md">
-          <%= link_to "Contacto", articles_path %>
-        </li>
-        <li class="col-md">
-          Tecnología
-        </li>
-        <% if user_signed_in? %>
-          <li class="col-md">
-            <%= link_to "Cerrar sesión" , destroy_user_session_path , method: :delete %>
-          </li>
-        <%else%>
-          <li class="col-md">
-          <%= link_to "Iniciar sesión", new_user_session_path%>
-          </li>
-          <li class="col-md">
-          <%= link_to "Crear cuenta", new_user_registration_path%>
-          </li>
-        <%end%>
-      </ul>
-    </nav> 
-  </header>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert%></p>
-<%= yield %>
-
+ <div class="jumbotron jumbotron-fluid" style="padding:0px;">
+    <header>
+      <%= render "partials/navigation" %>
+    </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert%></p>
+  </div>
+  <%= yield %>
 </body>
 </html>

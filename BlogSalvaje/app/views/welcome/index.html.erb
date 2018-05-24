@@ -1,11 +1,10 @@
-<h1>¡¡Bienvenidos al blog más salvaje!!</h1>
-    <% @article.each do |article| %>
-    <h1><%= link_to article.title, article %></h1>
-    <div>
-    <%= article.body %>
-    <%= link_to "Eliminar", article, method: :delete, class:"red" %>
+<div class="carousel-inner">
+<div class="carousel-item active">
+    <%= image_tag("background (1).jpg", :alt => "rss feed") %>
+    <div class="carousel-caption">
+        <h1 class="display-1">ESPACIO SALVAJE</h1>
     </div>
-    <%end%>
-<%# testeando ruby %>
+</div>
+
 
     

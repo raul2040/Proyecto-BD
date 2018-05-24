@@ -36,10 +36,15 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.4)
+    autoprefixer-rails (8.5.0)
+      execjs
     bcrypt (3.1.12)
     bcrypt (3.1.12-x86-mingw32)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (10.0.2)
     coffee-rails (4.1.1)
@@ -62,6 +67,8 @@ GEM
     execjs (2.7.0)
     ffi (1.9.23)
     ffi (1.9.23-x86-mingw32)
+    foreigner (1.7.4)
+      activerecord (>= 3.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.5)
@@ -171,9 +178,11 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  foreigner
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.10)

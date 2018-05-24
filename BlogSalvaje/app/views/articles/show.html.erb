@@ -1,7 +1,18 @@
-<h1><%= @article.title %></h1>  
-<div>
+<div class="article col-md">
+    <h1><%= @article.title %></h1>
     <%= @article.body %>
-</div>
-<div>
+    <% if not @article.user.nil? %> 
+    <p>Escrito por: <%= @article.user.email %> </p>
+    <%end%>
+    <p> Visitas: <%= @article.visits_count %> </p>
+            <h3>Comentarios</h3>
+                <% @article.comments.each do |comment| %>
+                    <p>
+                        <i><%= comment.body %></i>  - 
+                        <%= comment.user.email %>
+                    </p>
+                <%end%>
+
+            <%= render "comments/form" %>
     <%= link_to "Editar", edit_article_path(@article) ,class:"green" %>
 </div>
