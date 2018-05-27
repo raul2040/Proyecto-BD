@@ -1,10 +1,26 @@
-<div class="article col-md">
+<%if @article.categoria == "Mamifero"%>
+    <div class="MamiferoBackground">
+    <%end%>
+<%if @article.categoria == "Aves"%>
+    <div class="AveBackground">
+    <%end%>
+<%if @article.categoria == "Anfibio"%>
+    <div class="AnfibioBackground">
+    <%end%>
+
+<%if @article.categoria == "Reptil"%>
+    <div class="ReptilBackground">
+    <%end%>
+
+    <div class="article col-md">
     <h1><%= @article.title %></h1>
     <%= @article.body %>
+    <br>
     <% if not @article.user.nil? %> 
-    <p>Escrito por: <%= @article.user.email %> </p>
+    Escrito por: <%= @article.user.email %>
+    <p>En la categoria de: <%= @article.categoria%></p>
     <%end%>
-    <p> Visitas: <%= @article.visits_count %> </p>
+    <p>Visitas: <%= @article.visits_count %> </p>
             <h3>Comentarios</h3>
                 <% @article.comments.each do |comment| %>
                     <p>
@@ -14,5 +30,8 @@
                 <%end%>
 
             <%= render "comments/form" %>
+     <% if current_user.email == @article.user.email %>
     <%= link_to "Editar", edit_article_path(@article) ,class:"green" %>
+    <%end%>
+</div>
 </div>

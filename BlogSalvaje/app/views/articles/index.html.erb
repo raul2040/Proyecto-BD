@@ -1,11 +1,13 @@
 <% @articles.each do |article| %>
-<div class="articles">
-<h1><%= link_to article.title, article %></h1>
-<%= article.body %>
-<% if user_signed_in? %>
-<div class="field">
-    <%= link_to "Eliminar", article, method: :delete, class:"red" %>
-</div>
-<%end%>
+    <div class="articles">
+        <h1><%= link_to article.title, article %></h1>
+        <%= article.body %>
+        <p><%= article.categoria%></p>
+        <% if current_user.email == article.user.email %>
+        <div class="field">
+            <%= link_to "Eliminar", article, method: :delete, class:"red" %>
+        </div>
+        <%end%>
+    </div>
 </div>
 <%end%>

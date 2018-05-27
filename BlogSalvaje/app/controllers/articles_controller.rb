@@ -43,7 +43,8 @@ class ArticlesController < ApplicationController
 
     private
     def article_params
-        params.require(:article).permit(:title,:body)
+        params.require(:article).permit(:title,:body,:categoria)
     end
+    
     #Le decimos que los campos en los cuales el usuario puede actuar es el title y el body, básicamente para evitar posibles ataques.
 end
